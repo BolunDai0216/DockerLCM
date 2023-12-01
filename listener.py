@@ -27,7 +27,7 @@ def main():
             file_descriptor = lc.fileno()
 
             # Waiting for reading readiness (data available)
-            ready_to_read, _, _ = select.select([file_descriptor], [], [], 0)
+            ready_to_read, _, _ = select.select([file_descriptor], [], [], 0.02)
 
             if len(ready_to_read) != 0:
                 lc.handle()

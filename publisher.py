@@ -16,9 +16,11 @@ def main():
     msg.enabled = True
 
     lc = lcm.LCM()
+
     while True:
         lc.publish("EXAMPLE", msg.encode())
         time.sleep(0.01)
+        msg.timestamp = int(time.time())
 
 
 if __name__ == "__main__":
