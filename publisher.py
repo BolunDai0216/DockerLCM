@@ -15,7 +15,7 @@ def main():
     msg.name = "example string"
     msg.enabled = True
 
-    lc = lcm.LCM()
+    lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
 
     while True:
         lc.publish("EXAMPLE", msg.encode())
